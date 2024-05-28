@@ -1,4 +1,11 @@
 import streamlit as st
+from streamlit_chat import message
+import pathlib
+import textwrap
+import google.generativeai as genai
+from IPython.display import display
+from IPython.display import Markdown
+
 
 st.header ("VTR Machine Learning", divider='rainbow')
 
@@ -8,6 +15,7 @@ with st.sidebar:
 
     st.header(":yellow[List of contents]")
     main = st.button("Main Menu")
+    gpt = st.button("Chat GPT")
 
     bt = st.button("My Resume")
 if bt:
@@ -24,3 +32,15 @@ if main:
     st.write ("Machine Learning is a subset of artificial intelligence(AI) that focus on learning from data to develop an algorithm that can be used to make a prediction")
     st.write("A machine learning algorithm works by learning patterns and relationships from data to make predictions or decisions without being explicitly programmed for each task.")
     st.divider()
+
+
+
+
+if gpt:
+    with col1:
+        
+
+
+
+
+
