@@ -42,13 +42,12 @@ def to_markdown(text):
 
 
 if gpt:
-    with col1:
-        prompt = st.chat_input("Say something")
-        model = genai.GenerativeModel('gemini-pro')
-        response = model.generate_content(prompt)
-        X = response.text
-        st.write (f"Master: {X}")       
-        
+    prompt = st.chat_input("Say something")
+    model = genai.GenerativeModel('gemini-pro')
+    response = model.generate_content(prompt)
+    X = response.text
+    st.write (f"Master: {X}")       
+    
             
 
         
