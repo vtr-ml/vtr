@@ -11,6 +11,23 @@ st.header ("VTR Machine Learning", divider='rainbow')
 
 col1, col2= st.columns(2)
 
+genai.configure(api_key="AIzaSyD5xP91E7lR4shBS1CqGGzQIUWNuBLsqx8")
+
+def to_markdown(text):
+        text = text.replace('•', '  *')
+        return Markdown(textwrap.indent(text, '> ', predicate=lambda _: True))
+st.header(":yellow[Welcome to VTR ChatGPT]")
+
+with col1:
+    Enter=st.text_input("Please enter")
+    if st.button("Enter"):
+        model = genai.GenerativeModel('gemini-pro')
+        response = model.generate_content(Enter)
+        X = response.text
+        st.write (X)
+
+
+
 with st.sidebar:
 
     st.header(":yellow[List of contents]")
@@ -34,24 +51,8 @@ if main:
     st.divider()
 
 
-genai.configure(api_key="AIzaSyD5xP91E7lR4shBS1CqGGzQIUWNuBLsqx8")
 
-def to_markdown(text):
-        text = text.replace('•', '  *')
-        return Markdown(textwrap.indent(text, '> ', predicate=lambda _: True))
-
-def to_markdown(text):
-        text = text.replace('•', '  *')
-        return Markdown(textwrap.indent(text, '> ', predicate=lambda _: True))
-    
-if gpt:
-    Enter=st.text_input("Please enter")
-    model = genai.GenerativeModel('gemini-pro')
-    response = model.generate_content(Enter)
-    X = response.text
-    st.write (X)
-
-        
+            
 
 
 
