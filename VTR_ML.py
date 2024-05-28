@@ -8,36 +8,33 @@ from IPython.display import Markdown
 genai.configure(api_key="AIzaSyD5xP91E7lR4shBS1CqGGzQIUWNuBLsqx8")
 
 
-st.header ("VTR Machine Learning", divider='rainbow')
 col1, col2= st.columns(2)
 
 with st.sidebar:
-    st.header(":yellow[List of contents]")
-    main = st.button("Main Menu")
-    gpt = st.button("Chat GPT")
 
-    bt = st.button("My Resume")
-if bt:
-    with col1:
-        st.write ("L LOGIDHASAN", 
-                  "vetri.dreams2010@gmail.com ")
-                            
-                  
-if main:
-    st.header("Machine Learning")
+    st.header(":yellow[List of contents]")
+    page_names = ["Home", "My Resume", "VTR ChatGPT"]
+    page = st.radio("Navigation", page_names)
+
+if page == "Home":
+    st.header ("VTR Machine Learning", divider='rainbow')
+    st.subheader("Machine Learning")
     st.write ("Machine Learning is a subset of artificial intelligence(AI) that focus on learning from data to develop an algorithm that can be used to make a prediction")
     st.write("A machine learning algorithm works by learning patterns and relationships from data to make predictions or decisions without being explicitly programmed for each task.")
     st.divider()
 
-if gpt:
-        with col1:
-                st.header(":yellow[Welcome to VTR ChatGPT]")
-                Enter=st.text_input("Please enter")
-                if st.button("Enter"):
-                        model = genai.GenerativeModel('gemini-pro')
-                        response = model.generate_content(Enter)
-                        X = response.text
-                        st.write (X)
+if page =="My Resume":
+    st.write("L. Logidhasan")
+
+if page =="VTR ChatGPT":
+    st.header(":yellow[Welcome to VTR ChatGPT]")
+    Enter=st.text_input("Please enter")
+    Start = st.button("Generate")
+    if Start:
+        model = genai.GenerativeModel('gemini-pro')
+        response = model.generate_content(Enter)
+        X = response.text
+        st.write (X)
 
 
             
