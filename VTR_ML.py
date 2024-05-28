@@ -9,5 +9,5 @@ from streamlit_option_menu import option_menu
 from PIL import Image
 
 
-st.title ("VTR Machine Learning")
+st.title("VTR Machine Learning")
 
