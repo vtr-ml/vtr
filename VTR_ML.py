@@ -34,10 +34,23 @@ if main:
     st.divider()
 
 
+genai.configure(api_key="AIzaSyD5xP91E7lR4shBS1CqGGzQIUWNuBLsqx8")
+
+def to_markdown(text):
+            text = text.replace('•', '  *')
+            return Markdown(textwrap.indent(text, '> ', predicate=lambda _: True))
 
 
 if gpt:
     with col1:
+        prompt = st.chat_input("Say something")
+        model = genai.GenerativeModel('gemini-pro')
+        response = model.generate_content(prompt)
+        X = response.text
+        st.write (f"Master: {X}")       
+        
+            
+
         
 
 
