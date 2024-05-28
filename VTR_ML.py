@@ -43,11 +43,11 @@ if gpt:
     def to_markdown(text):
         text = text.replace('•', '  *')
         return Markdown(textwrap.indent(text, '> ', predicate=lambda _: True))
-    if st.button("Enter"):
-        model = genai.GenerativeModel('gemini-pro')
-        response = model.generate_content(Enter)
-        X = response.text
-        st.write (X)    
+    
+    model = genai.GenerativeModel('gemini-pro')
+    response = model.generate_content(Enter)
+    X = response.text
+    st.write (X)
     
             
 
