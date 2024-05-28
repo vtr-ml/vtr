@@ -36,17 +36,16 @@ if main:
 
 genai.configure(api_key="AIzaSyD5xP91E7lR4shBS1CqGGzQIUWNuBLsqx8")
 
+Enter=st.text_input("Please enter")
 def to_markdown(text):
-            text = text.replace('•', '  *')
-            return Markdown(textwrap.indent(text, '> ', predicate=lambda _: True))
-
+        text = text.replace('•', '  *')
+        return Markdown(textwrap.indent(text, '> ', predicate=lambda _: True))
 
 if gpt:
-    prompt = st.chat_input("Say something")
     model = genai.GenerativeModel('gemini-pro')
-    response = model.generate_content(prompt)
+    response = model.generate_content(Enter)
     X = response.text
-    st.write (f"Master: {X}")       
+    st.write (X)    
     
             
 
