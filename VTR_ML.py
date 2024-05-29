@@ -6,7 +6,7 @@ import google.generativeai as genai
 from IPython.display import display
 from IPython.display import Markdown
 genai.configure(api_key="AIzaSyD5xP91E7lR4shBS1CqGGzQIUWNuBLsqx8")
-
+st.set_page_config
 
 col1, col2= st.columns(2)
 
