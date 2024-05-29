@@ -6,7 +6,8 @@ import google.generativeai as genai
 from IPython.display import display
 from IPython.display import Markdown
 genai.configure(api_key="AIzaSyD5xP91E7lR4shBS1CqGGzQIUWNuBLsqx8")
-st.set_page_config
+
+st.set_page_config(page_title="Home", page_icon=":earth_asia:", layout="wide", initial_sidebar_state="auto", menu_items=None)
 
 col1, col2= st.columns(2)
 
@@ -27,9 +28,10 @@ if page =="My Resume":
     st.write("L. Logidhasan")
 
 if page =="VTR ChatGPT":
-    st.header(":yellow[Welcome to VTR ChatGPT]")
-    Enter=st.text_input("Please enter")
-    Start = st.button("Generate")
+    with col1:
+        st.header(":yellow[Welcome to VTR ChatGPT]")
+        Enter=st.text_input("Please enter")
+        Start = st.button("Generate")
     if Start:
         model = genai.GenerativeModel('gemini-pro')
         response = model.generate_content(Enter)
