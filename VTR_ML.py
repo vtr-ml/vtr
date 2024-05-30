@@ -5,6 +5,10 @@ import textwrap
 import google.generativeai as genai
 from IPython.display import display
 from IPython.display import Markdown
+import pymongo
+import pandas as pd
+import mysql.connector
+
 genai.configure(api_key="AIzaSyD5xP91E7lR4shBS1CqGGzQIUWNuBLsqx8")
 
 st.set_page_config(page_title="VTR", page_icon=":earth_asia:", layout="wide", initial_sidebar_state="auto", menu_items=None)
@@ -48,7 +52,7 @@ if page =="Need Help?":
         msg.chat_message("user").write(prompt)
         msg.chat_message("assistant").write(f"Echo: {prompt}")
 
-          
+
 
 
 
