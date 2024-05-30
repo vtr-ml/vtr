@@ -49,9 +49,7 @@ if page =="Need Help?":
         msg.chat_message("assistant").write(f"Echo: {prompt}")
 
           
-st.sidebar.page_link("pages/Youtube_Harvesting.py", label="Youtube_Harvesting")
 
-st.sidebar.page_link("Youtube_Harvesting.py", label="Youtube")
 
 
 
