@@ -45,9 +45,11 @@ if page =="Need Help?":
     st.header("Any Query")
     msg = st.container(height=600)
     if prompt := st.chat_input("Say something"):
-        if prompt == ["Hi", "Hello"
+        
+        reply = "Hi, how are you"
+
         msg.chat_message("user").write(prompt)
-        msg.chat_message("assistant").write(f"Echo: {prompt}")
+        msg.chat_message("assistant").write(f"Echo: {reply}")
 
 
 from gtts import gTTS
