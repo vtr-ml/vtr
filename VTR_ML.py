@@ -45,8 +45,24 @@ if page =="Need Help?":
     st.header("Any Query")
     msg = st.container(height=600)
     if prompt := st.chat_input("Say something"):
+        if prompt == ["Hi", "Hello"
         msg.chat_message("user").write(prompt)
         msg.chat_message("assistant").write(f"Echo: {prompt}")
+
+
+from gtts import gTTS
+import os
+
+if page == "Text to speech":
+    mytext = st.text_area("Enter text to convert")
+    enter = st.button ("Generate voice")
+    if enter:
+        language = 'en'
+        myobj = gTTS(text=mytext, lang=language, slow=False)
+
+        myobj.save("title.mp3")
+
+        os.system("title.mp3")
 
 
 
