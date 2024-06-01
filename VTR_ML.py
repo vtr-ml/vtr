@@ -15,7 +15,7 @@ col1, col2= st.columns(2)
 with st.sidebar:
 
     st.header(":yellow[List of contents]")
-    page_names = ["Home", "My Resume", "VTR ChatGPT", "Need Help?"]
+    page_names = ["Home", "My Resume", "VTR ChatGPT", "Need Help?", "Text to speech"]
     page = st.radio("Navigation", page_names)
 
 if page == "Home":
