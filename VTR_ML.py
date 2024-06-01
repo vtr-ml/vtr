@@ -26,7 +26,7 @@ if page == "Home":
     st.divider()
 
 if page =="My Resume":
-    st.write("L. Logidhasan"\n, "Mail ID: vetri.dreams2010@gmail.com"\n, "Contact Number: 9342162117")
+    st.write("L. Logidhasan", "Mail ID: vetri.dreams2010@gmail.com", "Contact Number: 9342162117")
 
 
 if page =="VTR ChatGPT":
