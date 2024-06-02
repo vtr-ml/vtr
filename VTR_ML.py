@@ -54,18 +54,23 @@ if page =="Need Help?":
 
 from gtts import gTTS
 import os
+from io import BytesIO
+
+
+sound_file = BytesIO()
 
 if page == "Text to speech":
     tlds = st.selectbox("choose the slang", ("us", "ca", "fr"))
-    path = os.getcwd()
+    language = "en"
     mytext = st.text_area("Enter text to convert")
     enter = st.button ("Generate voice")
     if enter:
         
-        file = gTTS(text=mytext, tld = tlds, lang="en", slow=False)
+        myobj = gTTS(text=mytext, tld = tlds, lang=language, slow=False)
 
-        file.save("%s/myaudio.mp3" % path)
+        myobj.write_to_fp(sound_file)
 
+        st.audio(sound_file)
 
 
 
