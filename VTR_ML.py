@@ -56,15 +56,16 @@ from gtts import gTTS
 import os
 
 if page == "Text to speech":
+    tlds = st.selectbox("choose the slang", ("us", "ca", "fr"))
+    path = os.getcwd()
     mytext = st.text_area("Enter text to convert")
     enter = st.button ("Generate voice")
     if enter:
-        language = 'en'
-        myobj = gTTS(text=mytext, lang=language, slow=False)
+        
+        file = gTTS(text=mytext, tld = tlds, lang="en", slow=False)
 
-        myobj.save("title.mp3")
+        file.save("%s/myaudio.mp3" % path)
 
-        os.system("title.mp3")
 
 
 
