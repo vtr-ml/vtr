@@ -9,7 +9,7 @@ import mysql.connector
 #Connecting API
 
 def Api_connect():
-  Api_Id = "XXXXXXXXXXXXXXXX"
+  Api_Id = "AIzaSyD21kFVzRSqJkArl3QgcwcmCwcoe4ztqlo"
 
   api_service_name = "youtube"
   api_version = "v3"
@@ -151,7 +151,7 @@ def channel_details (channel_id):
 mydb = mysql.connector.connect(
   host="localhost",
   user="root",
-  password="XXXXXXXXXX",
+  password="Password@123",
   database="Youtube_Harvesting"
 )
 #create database
