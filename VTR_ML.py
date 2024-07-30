@@ -5,7 +5,7 @@ import textwrap
 import google.generativeai as genai
 from IPython.display import display
 from IPython.display import Markdown
-genai.configure(api_key="AIzaSyD5xP91E7lR4shBS1CqGGzQIUWNuBLsqx8")
+genai.configure(api_key="AIzaSyDRn3VdtoKDhxthgLtLaH8U10RZQ-KwTlI")
 
 st.set_page_config(page_title="VTR", page_icon=":earth_asia:", layout="wide", initial_sidebar_state="auto", menu_items=None)
 
